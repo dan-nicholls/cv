@@ -4,6 +4,7 @@
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{parskip}
+\usepackage{longtable}
 
 % Document
 \titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
@@ -14,7 +15,7 @@
 	{\LARGE \textbf{Dan Nicholls}} \\
 	\vspace{0.5em}
 	Software Engineer \\
-	\href{mailto:dannicholls12@gmail.com}{dannicholls12@gmail.com} ~|~ github.com/dan-nicholls
+	\href{mailto:dannicholls12@gmail.com}{dannicholls12@gmail.com} ~|~ \href{https://github.com/dan-nicholls}github.com/dan-nicholls ~|~ \href{https://www.linkedin.com/in/dannichollsdev/} LinkedIn
 \end{center}
 
 \section{Contact Details}
@@ -38,27 +39,62 @@ This section should explain all about me
 \end{enumerate}
 
 \section{Experience}
-\begin{enumerate}
-	\item 12/12 - 12/12
-	\item AI Software Engineer
-	\item TRU Recognition
-	\item Description goes here
-	\item Stack: Deepstream / Python / Javascript
-\end{enumerate}
-\begin{enumerate}
-	\item 12/12 - 12/12
-	\item AI Software Engineer
-	\item TRU Recognition
-	\item Description goes here
-	\item Stack: Deepstream / Python / Javascript
-\end{enumerate}
-\begin{enumerate}
-	\item 12/12 - 12/12
-	\item AI Software Engineer
-	\item TRU Recognition
-	\item Description goes here
-	\item Stack: Deepstream / Python / Javascript
-\end{enumerate}
+\begin{longtable}[H]{l l}
+	\parbox[t]{0.175\textwidth}{
+		Feb 2022 - Mar 2025
+	}
+	&
+	\parbox[t]{0.825\textwidth}{
+		\textbf{AI Software Engineer}
+		\hfill
+		{\footnotesize \textbf{TRU Recognition}}\\
+		\begin{itemize}
+			\item Developed a scalable inferencing pipeline system using DeepStream and Triton, with a focus on optimizing performance and hardware utilization.
+			\item Managed model repositories in Triton, optimizing and pruning models to align with hardware demands.
+			\item Built complex CI/CD pipelines in Azure DevOps, automating integration, deployment and management of a range of microservices.
+			\item Conducted testing and validation of tracking techniques, evaluating system performance across various real-world scenarios.
+			\item Regularly used Python, PyTorch, Docker, and Azure DevOps to implement and maintain software solutions, collaborating through Jira for project management.
+		\end{itemize}
+	}
+	\\
+	\parbox[t]{0.175\textwidth}{
+		Aug 2016 - Feb 2022
+		Part-time
+	}
+	&
+	\parbox[t]{0.825\textwidth}{
+		\textbf{Marketing Assistant}
+		\hfill
+		{\footnotesize \textbf{Coco Ruby Plastic Surgery}}\\
+		\begin{itemize}
+			\item Designed and maintained multiple surgeon websites using WordPress, React, and JavaScript, enhancing user experience and brand visibility.
+			\item Added SEO-optimized content and utilized tools like Yoast, Google Analytics, and other SEO platforms to improve search rankings and target trending keywords.
+			\item  Improved load speeds and mobile responsiveness to enhance performance and accessibility across devices.
+			\item Managed and updated a comprehensive marketing image database, ensuring searchable metadata for streamlining marketing efforts.
+		\end{itemize}
+	}
+	\\
+	\parbox[t]{0.175\textwidth}{
+		Jun 2018 - Jul 2018
+		Internship
+	}
+	&
+	\parbox[t]{0.825\textwidth}{
+		\textbf{Electronics Engineer Intern}
+		\hfill
+		{\footnotesize \textbf{Eco Built Systems}}\\
+		\begin{itemize}
+			\item Revised and created technical documentation for a hydroponics lighting system.
+			\item Diagnosed and resolved connection and installation issues.
+			\item  Played a key role in designing, building, and troubleshooting a custom 3D printer, focusing on firmware installation and electronic component setup.
+			\item Addressed printing issues, including bed and nozzle alignment and calibration.
+			\item Utilized CAD software for design purposes.
+			\item Utilized CAD software for design purposes.
+		\end{itemize}
+		Completed as a part of the Swinburne Global Internship Program.
+	}
+	\\
+\end{longtable}
 
 \section{Education}
 \begin{enumerate}
