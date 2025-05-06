@@ -2,13 +2,15 @@
 
 This repo contains the LaTeX source for my personal CV. It's built using modular components and compiled via GitHub Actions. Whenever the content is updated, a fresh, versioned PDF is automatically published in the Releases tab.
 
+<p align="center">
+    <img src="preview.png" alt="CV Preview" width="80%">
+</p>
+
 ## ✨ Features
 
 - Built with LaTeX, using a clean and modular setup that's easy to update
 - Reproducible development environment using Nix
 - GitHub Actions auto-builds and uploads a versioned PDF (based on the run number)
-
----
 
 ## 🚀 Getting Started
 
