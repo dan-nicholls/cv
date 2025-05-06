@@ -23,7 +23,7 @@ jobs:
         run: |
           nix-shell --pure --run "xelatex -interaction=nonstopmode -output-directory=build cv.tex"
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cv-pdf
           path: build/cv.pdf
