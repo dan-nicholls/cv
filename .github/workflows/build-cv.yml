@@ -1,0 +1,27 @@
+name: Build and Release CV
+
+on:
+  push:
+    paths:
+      - '**.tex'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Nix
+        uses: cachix/install-nix-actions@v22
+        
+      - name: Build PDF
+        run: |
+          nix-shell --pure --run "xelatex -interaction=nonstopmode -output-directory=build cv.tex"
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cv-pdf
+          path: build/cv.pdf
