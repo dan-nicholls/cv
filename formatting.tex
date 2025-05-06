@@ -1,0 +1,73 @@
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+% ~~~~~~~~~~~~~~~~
+% PAGE SETUP 
+% ~~~~~~~~~~~~~~~~
+\usepackage{geometry}
+
+\geometry{
+	paper=a4paper,
+	top=1.75cm,
+	bottom=1.75cm,
+	left=2cm,
+	right=2cm,
+	headheight=0.75cm,
+	footskip=1cm,
+	headsep=0.5cm,
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+\pagestyle{empty}
+
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+% ~~~~~~~~~~~~~~~~
+% FONTS & ICONS
+% ~~~~~~~~~~~~~~~~
+\usepackage{fontawesome5}
+\usepackage{fontspec}
+\setmainfont{Raleway}[Weight=Light]
+
+\newcommand{\icon}[3][1em]{
+	\colorbox{black}{\makebox[#1]{\textcolor{white}{\large\csname fa#2\endcsname}}}
+	\hspace{0.2cm}
+	\textcolor{black}{#3}
+}
+
+% ~~~~~~~~~~~~~~~~
+% CUSTOM COMMANDS
+% ~~~~~~~~~~~~~~~~
+
+\newcommand{\cvsect}[1]{% The only parameter is the section text
+	\vspace{\baselineskip} % Whitespace before the section title
+	\colorbox{black}{\textcolor{white}{\MakeUppercase{\textbf{#1}}}}\\% Section title
+}
+
+\newcommand{\cvbreak}{
+	\vspace{\baselineskip}
+	\noindent\rule{\textwidth}{0.6pt}
+}
+
+\newcommand{\cvexperience}[4]{%
+	\begin{tabularx}{\textwidth}{@{}X r@{}}
+		\textbf{#1} — #2 & \footnotesize #3 \\
+	\end{tabularx}
+	#4
+	\vspace{0.6em}
+}
+
+\newcommand{\cveducation}[3]{%
+	\begin{tabularx}{\textwidth}{@{}X r@{}}
+	  \textbf{#1} & \footnotesize #2 \\
+	\end{tabularx}
+	#3
+	\vspace{0.6em}
+}

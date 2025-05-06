@@ -1,119 +1,155 @@
-\documentclass[10pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[9pt]{extarticle}
+\input{formatting}
 \usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{hyperref}
-\usepackage{parskip}
-\usepackage{longtable}
-
-% Document
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\usepackage{moresize}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 
-\begin{center}
-	{\LARGE \textbf{Dan Nicholls}} \\
-	\vspace{0.5em}
-	Software Engineer \\
-	\href{mailto:dannicholls12@gmail.com}{dannicholls12@gmail.com} ~|~ \href{https://github.com/dan-nicholls}github.com/dan-nicholls ~|~ \href{https://www.linkedin.com/in/dannichollsdev/} LinkedIn
-\end{center}
+% ~~~~~~~~~~~~~~~~
+% NAME AND CONTACT
+% ~~~~~~~~~~~~~~~~
 
-\section{Contact Details}
-\begin{enumerate}
-	\item Email
-	\item Phone 
-	\item Github
-	\item Linkdin
-\end{enumerate}
+\begin{minipage}[t]{0.40\textwidth}
+	\vspace{-\baselineskip}
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Dan}}}}}\\[2pt]
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Nicholls}}}}}\\[6pt]
+	\vspace{6pt}
+	{\LARGE AI Software Engineer}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+	\vspace{-\baselineskip}
+		\icon[1em]{MapMarker}{Melbourne, VIC}\\
+		\icon[1em]{Envelope}{\href{mailto:dannicholls12@gmail.com}{dannicholls12@gmail.com}}\\
+		\icon[1em]{Github}{\href{https://github.com/dan-nicholls}{/dan-nicholls}}\\
+		\icon[1em]{Linkedin}{\href{https://www.linkedin.com/in/dannichollsdev/}{/dannichollsdev}}\\
+\end{minipage}
 
-\section{Who am i?}
-This section should explain all about me
+\vspace{0.5cm}
 
+% ~~~~~~~~~~~~~~~~
+% ABOUT AND SKILLS
+% ~~~~~~~~~~~~~~~~
 
-\section{Key Skills}
-\begin{enumerate}
-	\item Deepstream ++++
-	\item Go +++
-	\item Python ++
-	\item CICD +++
-\end{enumerate}
+\begin{minipage}[t]{0.45\textwidth}
+	\vspace{-\baselineskip}
 
-\section{Experience}
-\begin{longtable}[H]{l l}
-	\parbox[t]{0.175\textwidth}{
-		Feb 2022 - Mar 2025
-	}
-	&
-	\parbox[t]{0.825\textwidth}{
-		\textbf{AI Software Engineer}
-		\hfill
-		{\footnotesize \textbf{TRU Recognition}}\\
-		\begin{itemize}
-			\item Developed a scalable inferencing pipeline system using DeepStream and Triton, with a focus on optimizing performance and hardware utilization.
-			\item Managed model repositories in Triton, optimizing and pruning models to align with hardware demands.
-			\item Built complex CI/CD pipelines in Azure DevOps, automating integration, deployment and management of a range of microservices.
-			\item Conducted testing and validation of tracking techniques, evaluating system performance across various real-world scenarios.
-			\item Regularly used Python, PyTorch, Docker, and Azure DevOps to implement and maintain software solutions, collaborating through Jira for project management.
-		\end{itemize}
-	}
-	\\
-	\parbox[t]{0.175\textwidth}{
-		Aug 2016 - Feb 2022
-		Part-time
-	}
-	&
-	\parbox[t]{0.825\textwidth}{
-		\textbf{Marketing Assistant}
-		\hfill
-		{\footnotesize \textbf{Coco Ruby Plastic Surgery}}\\
-		\begin{itemize}
-			\item Designed and maintained multiple surgeon websites using WordPress, React, and JavaScript, enhancing user experience and brand visibility.
-			\item Added SEO-optimized content and utilized tools like Yoast, Google Analytics, and other SEO platforms to improve search rankings and target trending keywords.
-			\item  Improved load speeds and mobile responsiveness to enhance performance and accessibility across devices.
-			\item Managed and updated a comprehensive marketing image database, ensuring searchable metadata for streamlining marketing efforts.
-		\end{itemize}
-	}
-	\\
-	\parbox[t]{0.175\textwidth}{
-		Jun 2018 - Jul 2018
-		Internship
-	}
-	&
-	\parbox[t]{0.825\textwidth}{
-		\textbf{Electronics Engineer Intern}
-		\hfill
-		{\footnotesize \textbf{Eco Built Systems}}\\
-		\begin{itemize}
-			\item Revised and created technical documentation for a hydroponics lighting system.
-			\item Diagnosed and resolved connection and installation issues.
-			\item  Played a key role in designing, building, and troubleshooting a custom 3D printer, focusing on firmware installation and electronic component setup.
-			\item Addressed printing issues, including bed and nozzle alignment and calibration.
-			\item Utilized CAD software for design purposes.
-			\item Utilized CAD software for design purposes.
-		\end{itemize}
-		Completed as a part of the Swinburne Global Internship Program.
-	}
-	\\
-\end{longtable}
+	\cvsect{Who Am I?}
 
-\section{Education}
-\begin{enumerate}
-	\item 2013-2017
-	\item Bachelor of Tec
-	\item Swinburne Technology
-	\item Basic description goes here
-\end{enumerate}
-\begin{enumerate}
-	\item 2013-2017
-	\item Bachelor of Tec 2
-	\item Swinburne Technology
-	\item Basic description goes here
-\end{enumerate}
+	I am a software engineer currently working in the computer vision (CV) AI space. I am a big advocate for split keyboards. Interested in media streaming (ie RTSP, WebRTC) Remember to update this later.\\
+\end{minipage}
+\hfill 
+\begin{minipage}[t]{0.5\textwidth}
+	\vspace{-\baselineskip}
 
-\section{Hobbies}
-This is my hobby section.
+	\cvsect{Key Skills}
 
-\section{Projects}
-This is my projects section
+	\begin{tabular}{@{}p{6em} l@{}}
+	\textbf{Languages}   & Go, Python, Javascript \\
+	\textbf{Frameworks}  & Deepstream, GStreamer, ONNX, PyTorch \\
+	\textbf{Automation}  & GitHub Actions, Azure Pipelines \\
+	\textbf{Deployment}  & Docker, Azure, AWS \\
+	\textbf{OS}          & Linux, Ubuntu, Arch, Nix \\
+	\textbf{DevOps}      & Jira, GitHub, Azure DevOps \\
+	\end{tabular}
+\end{minipage}
+
+\cvbreak
+
+% ~~~~~~~~~~~~~~~~
+% EXPERIENCE
+% ~~~~~~~~~~~~~~~~
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip}
+	\cvsect{Experience}
+
+	\cvexperience
+		{AI Software Engineer}
+		{TRU Recognition}
+		{Feb 2022 -- Mar 2025}
+		{
+			\begin{itemize}
+				\item Developed a scalable inferencing pipeline system using DeepStream and Triton, with a focus on optimizing performance and hardware utilization.
+				\item Managed model repositories in Triton, optimizing and pruning models to align with hardware demands.
+				\item Built complex CI/CD pipelines in Azure DevOps, automating integration, deployment and management of a range of microservices.
+				\item Conducted testing and validation of tracking techniques, evaluating system performance across various real-world scenarios.
+				\item Regularly used Python, PyTorch, Docker, and Azure DevOps to implement and maintain software solutions, collaborating through Jira for project management.
+			\end{itemize}
+		}
+
+	\cvexperience
+		{Marketing Assistant}
+		{Coco Ruby Plastic Surgery}
+		{Aug 2016 -- Feb 2022}
+		{
+			\begin{itemize}
+				\item Designed and maintained multiple surgeon websites using WordPress, React, and JavaScript, enhancing user experience and brand visibility.
+				\item Added SEO-optimized content and utilized tools like Yoast, Google Analytics, and other SEO platforms to improve search rankings and target trending keywords.
+				\item Improved load speeds and mobile responsiveness to enhance performance and accessibility across devices.
+				\item Managed and updated a comprehensive marketing image database, ensuring searchable metadata for streamlining marketing efforts.
+			\end{itemize}
+		}
+
+	\cvexperience
+		{Electronics Ingineer Intern}
+		{Eco Built Systems}
+		{Jun 2018 -- Jul 2018}
+		{
+			\begin{itemize}
+				\item Revised and developed technical documentation for a hydroponics lighting system, while diagnosing and resolving connection and installation issues.
+				\item Played a key role in designing, building, and troubleshooting a custom 3D printer, focusing on firmware installation and electronic component setup.
+				\item \textit{Completed as a part of the Swinburne Global Internship Program.}
+			\end{itemize}
+		}
+\end{minipage}
+
+\cvbreak
+
+% ~~~~~~~~~~~~~~~~
+% EDUCATION 
+% ~~~~~~~~~~~~~~~~
+
+\begin{minipage}[t]{\textwidth}
+	\vspace{-\baselineskip}
+	\cvsect{Education}
+
+	\cveducation
+		{Bachelor of Engineering (Electronics \& Computer Systems) (Honors)}
+		{2015 -- 2021}
+		{Swinburne University of Technology}
+
+	\cveducation
+		{Bachelor of Computer Science}
+		{2015 -- 2021}
+		{Swinburne University of Technology}
+\end{minipage}
+
+\cvbreak
+
+% ~~~~~~~~~~~~~~~~
+% OTHER INFO 
+% ~~~~~~~~~~~~~~~~
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	\cvsect{Projects}
+
+	This is my projects section
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	\cvsect{Hobbies}
+
+	This is my hobby section.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	\cvsect{References}
+
+	All references to be supplied upon request.
+\end{minipage}
 
 \end{document}
