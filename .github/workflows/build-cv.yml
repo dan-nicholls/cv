@@ -48,5 +48,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.VERSION }}
-          files: build/${{ env.FILE_NAME }}"
+          files: build/${{ env.FILE_NAME }}
           draft: true
