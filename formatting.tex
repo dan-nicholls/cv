@@ -35,8 +35,17 @@
 % FONTS & ICONS
 % ~~~~~~~~~~~~~~~~
 \usepackage{fontawesome5}
+%\usepackage{fontspec}
+%\setmainfont{Raleway}[Weight=Light]
 \usepackage{fontspec}
-\setmainfont{Raleway}[Weight=Light]
+\setmainfont{Raleway}[
+    Path = fonts/Raleway/,
+    Extension = .ttf,
+    UprightFont = *-Light,
+    BoldFont = *-Bold,
+    ItalicFont = *-LightItalic,
+    BoldItalicFont = *-BoldItalic
+]
 
 \newcommand{\icon}[3][1em]{
 	\colorbox{black}{\makebox[#1]{\textcolor{white}{\large\csname fa#2\endcsname}}}
