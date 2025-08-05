@@ -50,6 +50,10 @@ jobs:
           tag_name: ${{ env.VERSION }}
           files: build/${{ env.FILE_NAME }}
 
+      - name: Add latest tag for Github Pages
+        run: |
+          cp build/${{ env.FILE_NAME }} build/dan-nicholls-cv-latest.pdf
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
