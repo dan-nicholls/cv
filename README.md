@@ -6,6 +6,12 @@ This repo contains the LaTeX source for my personal CV. It's built using modular
     <img src="preview.png" alt="CV Preview" width="80%">
 </p>
 
+## 🔗 Live Link
+
+You can view the latest version of the resume at
+
+[https://dan-nicholls.github.io/cv/dan-nicholls-cv-latest.pdf](https://dan-nicholls.github.io/cv/dan-nicholls-cv-latest.pdf)
+
 ## ✨ Features
 
 - Built with LaTeX, using a clean and modular setup that's easy to update
