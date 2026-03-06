@@ -1,0 +1,55 @@
+\documentclass[10pt]{extarticle}
+\input{formatting}
+\usepackage{moresize}
+\usepackage[hidelinks]{hyperref}
+
+\input{cover_letter_content}
+
+\newcommand{\Greeting}{Hi \CompanyName,}
+\newcommand{\IntroParagraph}{%
+My name's \FirstName, and I'm really excited to be applying for the \RoleTitle\ role at \CompanyName. I am an AI Software Engineer with experience building computer vision systems and production-grade inference pipelines. I enjoy translating real-world requirements into reliable, dependable software that ships.
+}
+\newcommand{\ClosingParagraph}{%
+Thank you for your time and consideration. I would welcome the opportunity to discuss how my experience aligns with your needs and how I can contribute to the team.
+}
+\newcommand{\SignatureLine}{Sincerely,}
+
+\begin{document}
+
+\begin{minipage}[t]{0.40\textwidth}
+    \vspace{-\baselineskip}
+    \colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{\FirstName}}}}}\\[2pt]
+    \colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{\LastName}}}}}\\[6pt]
+    \vspace{6pt}
+    {\LARGE \TitleLine}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+    \vspace{-\baselineskip}
+        \icon[1em]{MapMarker}{\Location}\\
+        \icon[1em]{Envelope}{\href{mailto:\Email}{\Email}}\\
+        \icon[1em]{Github}{\href{\GithubUrl}{\GithubText}}\\
+        \icon[1em]{Linkedin}{\href{\LinkedinUrl}{\LinkedinText}}\\
+\end{minipage}
+
+\vspace{2.8em}
+\vspace{0.6em}
+
+\noindent\textbf{\Greeting}\\
+
+\vspace{0.6em}
+\IntroParagraph
+
+\vspace{0.5em}
+\BodyParagraphs
+
+\vspace{0.5em}
+\ClosingParagraph
+
+\vspace{0.8em}
+\SignatureLine\\
+\vspace{1.2em}
+\vspace{0.6em}
+\textbf{\FullName}
+
+\end{document}

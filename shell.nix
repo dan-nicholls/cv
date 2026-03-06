@@ -5,7 +5,8 @@ pkgs.mkShell {
 		texlive.combined.scheme-full
 	];
 
-	shellHook = ''
-		alias buildcv='xelatex -interaction=nonstopmode -output-directory=build cv.tex'
-	'';
+		shellHook = ''
+			alias buildcv='xelatex -interaction=nonstopmode -output-directory=build cv.tex'
+			alias buildcover='xelatex -interaction=nonstopmode -output-directory=build cover_letter.tex'
+		'';
 }
