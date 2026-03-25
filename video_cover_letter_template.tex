@@ -1,0 +1,91 @@
+\documentclass[10pt]{extarticle}
+\input{formatting}
+\usepackage{moresize}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfnewwindow=true}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xstring}
+\usetikzlibrary{calc}
+
+\input{video_cover_letter_content}
+
+% Extract a YouTube video id from \VideoUrl.
+% Supported forms: https://youtube.com/shorts/<id> and https://www.youtube.com/watch?v=<id>
+\newcommand{\VideoIdTmp}{}
+\newcommand{\VideoId}{}
+\IfSubStr{\VideoUrl}{/shorts/}{\StrBehind{\VideoUrl}{/shorts/}[\VideoIdTmp]}{\StrBehind{\VideoUrl}{v=}[\VideoIdTmp]}
+\IfSubStr{\VideoIdTmp}{?}{\StrBefore{\VideoIdTmp}{?}[\VideoId]}{\edef\VideoId{\VideoIdTmp}}
+
+% Download thumbnail on build (requires -shell-escape).
+\newcommand{\VideoThumbPath}{build/video-cover-letter-thumb.jpg}
+\newcommand{\FetchVideoThumb}{%
+  \immediate\write18{mkdir -p build && (curl -fsSL -o "\VideoThumbPath" "https://i.ytimg.com/vi/\VideoId/maxresdefault.jpg" || curl -fsSL -o "\VideoThumbPath" "https://i.ytimg.com/vi/\VideoId/hqdefault.jpg")}
+}
+
+\newcommand{\Greeting}{Hi \CompanyName\ hiring team,}
+\newcommand{\IntroParagraph}{%
+My name's Dan. Instead of writing another boring cover letter for you to read, I've instead created a short video that will hopefully help bring some life back into the hiring process.
+}
+\newcommand{\ClosingParagraph}{%
+Thanks for your time and consideration, I hope to hear from you soon.
+}
+\newcommand{\SignatureLine}{Sincerely,}
+
+\newcommand{\VideoCard}{%
+\begin{tikzpicture}
+  \node[draw=black, rounded corners=8pt, inner sep=0pt, minimum width=\textwidth] (box) {\includegraphics[width=\textwidth]{\VideoThumbPath}};
+  % Darken a little so the play icon reads
+  \fill[black, opacity=0.18, rounded corners=8pt] (box.south west) rectangle (box.north east);
+  % Play icon
+  \fill[black, opacity=0.25] ($(box.center)+(0,-0.06cm)$) circle (1.22cm);
+  \fill[white] (box.center) circle (1.15cm);
+  \fill[black] ($(box.center)+(-0.28cm,-0.55cm)$) -- ($(box.center)+(-0.28cm,0.55cm)$) -- ($(box.center)+(0.72cm,0)$) -- cycle;
+\end{tikzpicture}%
+}
+
+\begin{document}
+
+\begin{minipage}[t]{0.40\textwidth}
+    \vspace{-\baselineskip}
+    \colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{\FirstName}}}}}\\[2pt]
+    \colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{\LastName}}}}}\\[6pt]
+    \vspace{6pt}
+    {\LARGE \TitleLine}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+    \vspace{-\baselineskip}
+        \icon[1em]{MapMarker}{\Location}\\
+        \icon[1em]{Envelope}{\href{mailto:\Email}{\Email}}\\
+        \icon[1em]{Github}{\href{\GithubUrl}{\GithubText}}\\
+        \icon[1em]{Linkedin}{\href{\LinkedinUrl}{\LinkedinText}}\\
+\end{minipage}
+
+\vspace{2.8em}
+\vspace{0.6em}
+
+\noindent\textbf{\Greeting}\\
+
+\vspace{0.6em}
+\IntroParagraph
+
+\vspace{0.8em}
+\noindent You can click the thumbnail below to play it, or use this link: \url{\VideoUrl}
+
+\vspace{1.0em}
+\begin{center}
+\FetchVideoThumb
+\href{\VideoUrl}{\VideoCard}
+\end{center}
+
+\vspace{0.5em}
+\ClosingParagraph
+
+\vspace{0.8em}
+\SignatureLine\\
+\vspace{1.2em}
+\vspace{0.6em}
+\textbf{\FullName}
+
+\end{document}
